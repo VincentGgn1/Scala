@@ -11,16 +11,12 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 
 	val integers = scala.util.Random.nextInt()
 
-
-
-
 			lazy val nonEmptyheap: Gen[H]  = for
 			{
 				int <- arbitrary[Int]	
 						b <- arbitrary[Boolean]
 								heap <- if(b) const(empty) else nonEmptyheap 
 			}yield insert(int,heap)
-
 
 			lazy val genHeap: Gen[H] = oneOf(const(empty),nonEmptyheap,nonEmptyheap)
 
@@ -35,27 +31,22 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 			property("empty") = forAll{ a:Int =>
 			val heap = insert(a,empty)
 			findMin(heap) == a
-
 			}
 			property("Delempty") = forAll{ a:Int =>
 			val heap = deleteMin(insert(a,empty))
 			heap == empty
-
 			}
 
 			property ("heapMins") = forAll{(h1:H,h2:H) =>
 			val m1 = if (isEmpty(h1)) 0 else findMin(h1)
 			val m2 = if (isEmpty(h2)) 0 else findMin(h2)
-			//
 			val m3 = if (isEmpty(h2) && isEmpty(h1)) 0 
 			else if(isEmpty(h2)) findMin(h1)
 			else if(isEmpty(h1)) findMin(h2)
 			else findMin(meld(h1,h2))
-
 			if(!(isEmpty(h2) || isEmpty(h1)))
 				if(m1 < m2){
 					m3 == m1
-
 				}
 				else { 
 					m3 == m2
@@ -65,7 +56,6 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 					m3==m1
 					else m3==m2
 			}
-
 			}
 
 			property ("deleteMin") = forAll{ (h:H) =>
@@ -79,7 +69,6 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 							m <= findMin(h2)
 						}else h2 == empty
 			}else h == empty
-
 			}
 
 
@@ -117,7 +106,6 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 
 			}else 
 				h == empty
-
 			}
 
 			property ("breakdown") = forAll{(h:H) =>
@@ -128,16 +116,12 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 						findMin(m) == findMin(h)
 			}
 			else h == empty  
-
-
 			}
 
 			property ("meld") = forAll{(h1:H,h2:H) =>
 			val m1 = if (isEmpty(h1)) 0 else findMin(h1)
 			val m2 = if (isEmpty(h2)) 0 else findMin(h2)
-			//
 			val m3 = meld(h1,h2)
-
 			if(!(isEmpty(h2) || isEmpty(h1)))
 				if(m1 < m2){
 					val m4 = meld(insert(m1,h2),h1)
@@ -158,11 +142,11 @@ abstract class QuickCheckHeap extends Properties("Heap") with IntHeap {
 			}
 
 			property("insertList") = forAll { list: List[Int] =>
-			    def insertList(list: List[Int], h: H): H = list match {
-			      case Nil => h
-			      case t :: ts => insertList(ts, insert(t, h))
-			    }
-			    val oh = List()
+			def insertList(list: List[Int], h: H): H = list match {
+			case Nil => h
+			case t :: ts => insertList(ts, insert(t, h))
+			}
+			val oh = List()
 					val (listo,h1) = delMin(insertList(list,empty),oh)
 					list.sorted == (h1)
 			}
