@@ -1,4 +1,4 @@
-package quickcheck
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        package quickcheck
 
 import common._
 import scala.util.Sorting
@@ -16,8 +16,6 @@ trait IntHeap extends Heap {
 	    delMin(deleteMin(inh),out)
 
   }
-
-
 
 }
 
