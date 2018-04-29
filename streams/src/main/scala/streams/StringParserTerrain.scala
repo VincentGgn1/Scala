@@ -54,17 +54,17 @@ trait StringParserTerrain extends GameDef {
 	 */
 	def terrainFunction(levelVector: Vector[Vector[Char]]): Pos  => Boolean =
 {
-	  def function( p: Pos): Boolean = {
-	    if (levelVector.isDefinedAt(p.row) && levelVector(p.row).isDefinedAt(p.col))
-	    {
-	     levelVector(p.row)(p.col) != '-' 
-	  
-	    }else{
-	      //could be condensed in one statement, but clearer that way
-	      false
-	    }
-	    }
-	  function
+		def function( p: Pos): Boolean = {
+				if (levelVector.isDefinedAt(p.row) && levelVector(p.row).isDefinedAt(p.col))
+				{
+					levelVector(p.row)(p.col) != '-' 
+
+				}else{
+					//could be condensed in one statement, but clearer that way
+					false
+				}
+		}
+		function
 
 }
 
@@ -79,7 +79,6 @@ trait StringParserTerrain extends GameDef {
 	def findChar(c: Char, levelVector: Vector[Vector[Char]]) : Pos = {
 
 			var p:Pos = Pos(0,0)  
-			println(levelVector)
 					for {
 						i <- 0 to levelVector.size-1
 						j <- 0 to levelVector(i).size-1

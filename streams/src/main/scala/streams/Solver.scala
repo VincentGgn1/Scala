@@ -74,18 +74,7 @@ trait Solver extends GameDef {
    * construct the correctly sorted stream.
    */
     
-/*       def from (paths: Set[Path], explored: Set[State]) :  Stream[Set[Path]] = 
-       if (paths.isEmpty) Stream.empty
-       else {
-         val more = for {
-           path <- paths
-           next <- moves map path.extend
-           if!(explored contains next.endState)
-         }yield next
-       paths #:: from(more, explored ++ (more map(_.endState)))
-       }
-    */
-    
+
     
   def from(initial: Stream[(Block, List[Move])],
            explored: Set[Block]): Stream[(Block, List[Move])] = 
@@ -129,7 +118,6 @@ trait Solver extends GameDef {
       paths <- pathsFromStart
       if (done(paths._1))
     }yield (paths._2)
-    println(solutions)
     if (solutions.size >0) solutions(0)
     else List()
   }
