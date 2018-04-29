@@ -1,0 +1,25 @@
+test
+test:test
+last test:test
+test
+last test:test
+test
+last test:test
+test
+submit -h
+submit vincent.gueguen@outlook.fr fuMuhx8S4GJivlFY
+test
+submit vincent.gueguen@outlook.fr iej3TNtKSAGGCM8K
+test
+submit vincent.gueguen@outlook.fr KcX4gQ5ZHF2roja5
+test
+submit vincent.gueguen@outlook.fr KcX4gQ5ZHF2roja5
+test
+submit vincent.gueguen@outlook.fr OMZAPy6uyanoKyHH
+test
+submit vincent.gueguen@outlook.fr      def validate(list: List[Int]): Boolean = list match {
+      case Nil => true
+      case x :: Nil => true
+      case x :: y :: rest => if (x <= y) validate(y :: rest) else false
+submit vincent.gueguen@outlook.fr O48njQLMZ7HHUcAi
+exit

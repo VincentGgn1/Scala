@@ -1,0 +1,12 @@
+[0m[[0minfo[0m] [0m+ Heap.gen1: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.empty: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.Delempty: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.heapMins: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.deleteMin: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.order: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.meldemin: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.doubleins: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.doubledel: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.breakdown: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.meld: OK, passed 100 tests.[0m
+[0m[[0minfo[0m] [0m+ Heap.insertList: OK, passed 100 tests.[0m
